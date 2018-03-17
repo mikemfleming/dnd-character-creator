@@ -6,7 +6,7 @@ const fs = require('fs')
 
 app.get('/script.js', (req, res) => {
 	return browserify(path.join(__dirname, './src/index.js'))
-		.transform('babelify', { presets: ['env', 'react'] })
+		.transform('babelify', { presets: ['env', 'react', 'stage-3'] })
 		.bundle()
 		.pipe(res)
 })

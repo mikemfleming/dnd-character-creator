@@ -1,21 +1,26 @@
 import { combineReducers } from 'redux';
-import { HELLO_WORLD, RESET } from '../actions';
+import { SET_RACE } from '../actions';
 
-let initialState = { message: 'Hello'  };
+let initialState = {
+  race: {},
+};
 
-const helloWorld = (state = initialState, action) => {
+const api = [{ name: 'human'}, { name: 'elf' }];
+
+const builder = (state = initialState, action) => {
 	switch (action.type) {
-		case HELLO_WORLD:
-			return Object.assign({}, state, { message: 'Hello, world!' });
-		case RESET:
-			return state = initialState;
+    case SET_RACE:
+			return {
+        ...state,
+        race: api[action.payload],
+      };
 		default:
 			return state;
 	}
 };
 
 const helloReducer = combineReducers({
-	helloWorld
+	builder,
 });
 
 export default helloReducer;

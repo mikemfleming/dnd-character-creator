@@ -1,15 +1,10 @@
 export const HELLO_WORLD = 'HELLO_WORLD';
 export const RESET = 'RESET';
 
-export const helloWorld = () => {
+export const setRace = () => {
+  console.log('setting race')
 	return {
-		type: HELLO_WORLD
+		type: 'SET_RACE',
+    payload: 1,
 	};
 };
-
-export const reset = () => {
-	return {
-		type: RESET
-	};
-};
-
