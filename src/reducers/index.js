@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { SET_RACE } from '../actions';
+import { sendRequest } from '../../utils/request.util';
 
 let initialState = {
   race: {},
