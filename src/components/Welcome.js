@@ -16,7 +16,7 @@ const Welcome = () => (
         <li>Select your Background</li>
         <li>Select your Gear</li>
       </ul>
-      <Link to="/builder">Get Started</Link>
+      <Link to="/builder/race">Get Started</Link>
     </div>
 	</div>
 );
