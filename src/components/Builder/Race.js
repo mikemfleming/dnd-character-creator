@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Race = ({ onClick, race }) => {
-  console.log(onClick, race)
   return (
     <div>
       <h1>Select your race</h1>
