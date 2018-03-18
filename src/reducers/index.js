@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 const initialState = {
-  race: {},
+  race: null,
 };
 
 const builder = (state = initialState, action) => {

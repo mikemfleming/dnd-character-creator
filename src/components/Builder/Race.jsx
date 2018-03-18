@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Race = ({ onChange, race }) => {
   return (
     <div>
-      <select onChange={onChange} defaultValue={race.index}>
+      <select onChange={onChange} defaultValue={(race ? race.index : 0)}>
         <option value="0">Pick a Race</option>
         <option value="1">Dwarf</option>
         <option value="2">Elf</option>
@@ -16,7 +16,24 @@ const Race = ({ onChange, race }) => {
         <option value="8">Half-Orc</option>
         <option value="9">Tiefling</option>
       </select>
-      <pre>{JSON.stringify(race)}</pre>
+      {
+        !race
+          ? null
+          : (
+            <div>
+              {
+                Object.keys(race).map((key) => {
+                  return (
+                    <div>
+                      <h2>{key}</h2>
+                      <p>{JSON.stringify(race[key])}</p>
+                    </div>
+                  );
+                })
+              }
+            </div>
+          )
+      }
       <Link to="/builder/class">Continue</Link>
     </div>
   );
