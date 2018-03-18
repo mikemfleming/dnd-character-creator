@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onClick: () => dispatch(setRace()),
+    onChange: (e) => dispatch(setRace(e.target.value)),
   };
 };
 

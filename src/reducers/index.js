@@ -2,26 +2,24 @@ import { combineReducers } from 'redux';
 import { SET_RACE } from '../actions';
 import { sendRequest } from '../../utils/request.util';
 
-let initialState = {
+const initialState = {
   race: {},
 };
 
-const api = [{ name: 'human'}, { name: 'elf' }];
-
 const builder = (state = initialState, action) => {
-	switch (action.type) {
+  switch (action.type) {
     case SET_RACE:
-			return {
+      return {
         ...state,
-        race: api[action.payload],
+        race: action.payload,
       };
-		default:
-			return state;
-	}
+    default:
+      return state;
+  }
 };
 
 const helloReducer = combineReducers({
-	builder,
+  builder,
 });
 
 export default helloReducer;

@@ -17,7 +17,7 @@ export default class Builder extends Component {
   render () {
     const { race } = this.props;
     const MyRace = () => {
-      return <Race onClick={this.props.onClick} race={race} />;
+      return <Race onChange={this.props.onChange} race={race} />;
     };
 
     return (
