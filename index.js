@@ -13,6 +13,6 @@ app.get('*/script.js', (req, res) => browserify(path.join(__dirname, './src/inde
   .bundle()
   .pipe(res));
 
-app.get('*.js', (req, res) => res.sendFile(path.join(__dirname, './index.html')));
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, './index.html')));
 
 app.listen(4000, () => console.log('listening on 4000'));

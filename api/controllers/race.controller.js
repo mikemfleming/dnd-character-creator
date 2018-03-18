@@ -1,6 +1,6 @@
 
 const apiUtil = require('../../utils/api.util');
-const Race = require('../models/race.model');
+const Race = require('../services/dnd5eapi/race.service');
 
 exports.get = (req, res) => {
   const { raceId } = req.params;

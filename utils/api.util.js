@@ -1,4 +1,7 @@
 
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
+
 exports.sendResponse = (res, message) => (payload) => {
   console.log(message);
   return res.status(200).send({
@@ -15,4 +18,8 @@ exports.sendError = (res, message) => (error) => {
     error,
     message,
   });
+};
+
+exports.request = (url, options) => {
+  return fetch(url).then(data => data.json());
 };
