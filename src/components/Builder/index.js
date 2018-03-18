@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 import Race from './Race';
@@ -9,16 +9,14 @@ import Background from '../Background';
 import Gear from '../Gear';
 
 export default class Builder extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {};
   }
 
-  render () {
+  render() {
     const { race } = this.props;
-    const MyRace = () => {
-      return <Race onChange={this.props.onChange} race={race} />;
-    };
+    const MyRace = () => <Race onChange={this.props.onChange} race={race} />;
 
     return (
       <Router>
@@ -30,6 +28,6 @@ export default class Builder extends Component {
           <Route path="/builder/gear" component={Gear} />
         </Switch>
       </Router>
-    )
+    );
   }
-};
+}
