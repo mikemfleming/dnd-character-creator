@@ -1,4 +1,8 @@
+const express = require('express');
+const Race = require('./controllers/race.controller');
 
-module.exports = (app) => {
+const API = express();
 
-};
+API.get('/race/:raceId', Race.get);
+
+module.exports = API;
