@@ -1,3 +1,6 @@
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
+
 const express = require('express');
 const browserify = require('browserify');
 const path = require('path');

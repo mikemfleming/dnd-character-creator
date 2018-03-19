@@ -11,7 +11,7 @@ const middleware = applyMiddleware(promise(), createLogger());
 const store = createStore(helloReducer, middleware);
 
 ReactDOM.render(
-	<Root store={store} />,
-	document.getElementById('root')
+  <Root store={store} />,
+  document.getElementById('root'),
 );
 
