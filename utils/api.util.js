@@ -1,6 +1,8 @@
 
+const log = require('../logger');
+
 exports.sendResponse = (res, message) => (payload) => {
-  console.log(message);
+  log.info(message);
   return res.status(200).send({
     ok: 1,
     payload,
@@ -9,7 +11,7 @@ exports.sendResponse = (res, message) => (payload) => {
 };
 
 exports.sendError = (res, message) => (error) => {
-  console.log(message);
+  log.error(error, message);
   return res.status(500).send({
     ok: 0,
     error,
@@ -18,5 +20,6 @@ exports.sendError = (res, message) => (error) => {
 };
 
 exports.request = (url, options) => {
+  log.info(`SENDING REQUEST TO ${url}`);
   return fetch(url).then(data => data.json());
 };

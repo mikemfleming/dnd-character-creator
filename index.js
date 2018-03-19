@@ -4,10 +4,11 @@ require('isomorphic-fetch');
 const express = require('express');
 const browserify = require('browserify');
 const path = require('path');
-const morgan = require('morgan');
+const log = require('./logger');
+const pino = require('pino-http')({ logger: log });
 
 const app = express();
-app.use(morgan('tiny'));
+app.use(pino);
 
 const API = require('./api');
 
@@ -20,4 +21,4 @@ app.get('*/script.js', (req, res) => browserify(path.join(__dirname, './src/inde
 
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, './index.html')));
 
-app.listen(4000, () => console.log('listening on 4000'));
+app.listen(4000, () => log.info('listening on 4000'));
