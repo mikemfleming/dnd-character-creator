@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Welcome = () => (
-	<div>
-    <div style={{height: '100vh'}}>
+  <div>
+    <div style={{ height: '100vh' }}>
       <h1>Making a D&D Character is Easy</h1>
       <a href="#intro">Get Started</a>
     </div>
-    <div style={{height: '100vh'}}>
+    <div style={{ height: '100vh' }}>
       <h1 id="intro">All you have to do is:</h1>
       <ul>
         <li>Select your Race</li>
@@ -18,7 +18,7 @@ const Welcome = () => (
       </ul>
       <Link to="/builder/race">Get Started</Link>
     </div>
-	</div>
+  </div>
 );
 
 export default Welcome;

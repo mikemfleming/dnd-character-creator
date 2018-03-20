@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
-import Race from './Race';
+import Race from './Race.jsx';
 import Class from '../Class';
 import Scores from '../Scores';
 import Background from '../Background';
@@ -17,7 +17,7 @@ export default class Builder extends Component {
   render() {
     const { race } = this.props;
     const MyRace = () => <Race onChange={this.props.onChange} race={race} />;
-
+ 
     return (
       <Router>
         <Switch>

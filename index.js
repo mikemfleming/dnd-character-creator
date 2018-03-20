@@ -14,10 +14,7 @@ const API = require('./api');
 
 app.use('/api', API);
 
-app.get('*/script.js', (req, res) => browserify(path.join(__dirname, './src/index.js'), { extensions: ['.jsx'] })
-  .transform('babelify', { presets: ['env', 'react', 'stage-3'] })
-  .bundle()
-  .pipe(res));
+app.get('*/script.js', (req, res) => res.sendFile(path.join(__dirname, 'dist/bundle.js')));
 
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, './index.html')));
 
