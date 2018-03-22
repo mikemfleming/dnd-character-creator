@@ -3,13 +3,10 @@ import { Link } from 'react-router-dom';
 
 const Welcome = () => (
   <div>
-    <div style={{ height: '100vh' }}>
-      <h1>Making a D&D Character is Easy</h1>
-      <a href="#intro">Get Started</a>
-    </div>
-    <div style={{ height: '100vh' }}>
-      <h1 id="intro">All you have to do is:</h1>
-      <ul>
+    <div className="pv6 tc">
+      <h1>Making a D&D character is easy.</h1>
+      <h2>There are only a few steps to follow.</h2>
+      <ul className="list pl0">
         <li>Select your Race</li>
         <li>Select your Class</li>
         <li>Roll your Ability Scores</li>
