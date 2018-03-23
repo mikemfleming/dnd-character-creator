@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Builder from '../components/Builder';
-import { setRace } from '../actions';
+import { setRace, setSubrace } from '../actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onChange: (e) => dispatch(setRace(e.target.value)),
+    onSetRace: (e) => dispatch(setRace(e.target.value)),
+    onSetSubrace: (e) => dispatch(setSubrace(e.target.value)),
   };
 };
 

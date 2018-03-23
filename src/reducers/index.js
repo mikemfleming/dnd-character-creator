@@ -11,6 +11,11 @@ const builder = (state = initialState, action) => {
         ...state,
         race: action.payload,
       };
+    case 'SET_SUBRACE_FULFILLED':
+      return {
+        ...state,
+        subrace: action.payload,
+      };
     default:
       return state;
   }

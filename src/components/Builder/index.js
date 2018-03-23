@@ -15,8 +15,14 @@ export default class Builder extends Component {
   }
 
   render() {
-    const { race } = this.props;
-    const MyRace = () => <Race onChange={this.props.onChange} race={race} />;
+    const MyRace = () => (
+      <Race 
+        onSetRace={this.props.onSetRace}
+        onSetSubrace={this.props.onSetSubrace}
+        race={this.props.race}
+        subrace={this.props.subrace}
+      />
+    );
  
     return (
       <Router>

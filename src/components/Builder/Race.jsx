@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Race = ({ onChange, race }) => (
+const Race = ({ onSetRace, onSetSubrace, race, subrace }) => (
   <div>
     <div className="tc">
       <h2 className="fl w-100 pa2 bg-navy washed-yellow">
@@ -9,7 +9,7 @@ const Race = ({ onChange, race }) => (
       </h2>
       <select
         className="pv2"
-        onChange={onChange}
+        onChange={onSetRace}
         defaultValue={(race ? race.index : 0)}
       >
         <option value="0">Choose One</option>
@@ -113,11 +113,20 @@ const Race = ({ onChange, race }) => (
                     : (
                       <div>
                         {
-                          race.subraces.map(r => <p>{r.name}</p>)
+                          <select onChange={onSetSubrace}>
+                            {
+                              race.subraces.map((r) => {
+                                const subraceId = r.url.split('/').pop();
+                                return <option value={subraceId}>{r.name}</option>;
+                              })
+                            }
+                          </select>
                         }
                       </div>
                     )
                 }
+
+                {JSON.stringify(subrace)}
               </div>
             </div>
           )
